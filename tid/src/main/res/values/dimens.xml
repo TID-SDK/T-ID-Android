@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2024 T-Bank
+  ~
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~        http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+
+    <!-- General dimens -->
+    <dimen name="tid_default_corner_radius">8dp</dimen>
+
+    <!-- Compact -->
+    <dimen name="tid_compact_top_padding">18dp</dimen>
+    <dimen name="tid_compact_bottom_padding">14dp</dimen>
+    <dimen name="tid_compact_horizontal_padding">16dp</dimen>
+
+    <!-- Small dimens -->
+    <dimen name="tid_small_min_height">30dp</dimen>
+    <dimen name="tid_small_vertical_padding">8dp</dimen>
+    <dimen name="tid_small_horizontal_padding">18dp</dimen>
+    <dimen name="tid_small_title_font_size">10sp</dimen>
+    <dimen name="tid_small_title_tid_logo_offset">5dp</dimen>
+    <dimen name="tid_small_tid_logo_height">14dp</dimen>
+    <dimen name="tid_small_tid_logo_width">27dp</dimen>
+    <dimen name="tid_small_tid_logo_border">0dp</dimen>
+
+    <!-- Medium dimens -->
+    <dimen name="tid_medium_min_height">40dp</dimen>
+    <dimen name="tid_medium_vertical_padding">11dp</dimen>
+    <dimen name="tid_medium_horizontal_padding">26dp</dimen>
+    <dimen name="tid_medium_title_font_size">14sp</dimen>
+    <dimen name="tid_medium_title_tid_logo_offset">7dp</dimen>
+    <dimen name="tid_medium_tid_logo_height">20dp</dimen>
+    <dimen name="tid_medium_tid_logo_width">37dp</dimen>
+    <dimen name="tid_medium_tid_logo_border">2dp</dimen>
+
+    <!-- Large dimens -->
+    <dimen name="tid_large_min_height">60dp</dimen>
+    <dimen name="tid_large_vertical_padding">16dp</dimen>
+    <dimen name="tid_large_horizontal_padding">32dp</dimen>
+    <dimen name="tid_large_title_font_size">18sp</dimen>
+    <dimen name="tid_large_title_tid_logo_offset">9dp</dimen>
+    <dimen name="tid_large_tid_logo_height">25dp</dimen>
+    <dimen name="tid_large_tid_logo_width">47dp</dimen>
+    <dimen name="tid_large_tid_logo_border">2dp</dimen>
+
+</resources>

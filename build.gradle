@@ -1,0 +1,44 @@
+apply from: 'gradle/versions.gradle'
+
+def useMavenLocal = project.hasProperty("useMavenLocal")
+print("useMavenLocal = " + useMavenLocal)
+
+buildscript {
+    apply from: 'gradle/versions.gradle'
+
+    repositories {
+        // mavenLocal() // Uncomment when testing on Maven local repository
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$androidPluginVersion"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:$detektVersion"
+        classpath "org.jetbrains.dokka:dokka-gradle-plugin:$dokkaVersion"
+        classpath "org.jacoco:org.jacoco.core:$jacocoVersion"
+        classpath "com.vanniktech:gradle-maven-publish-plugin:0.34.0"
+    }
+}
+
+allprojects {
+    repositories {
+        if (useMavenLocal) mavenLocal()
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+
+subprojects {
+    afterEvaluate { project ->
+        project.apply from: "$project.rootDir/gradle/plugin/jacoco-test-report.gradle"
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+apply from: "$project.rootDir/gradle/plugin/jacoco-root-report.gradle"

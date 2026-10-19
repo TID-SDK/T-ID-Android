@@ -1,0 +1,64 @@
+apply plugin: 'com.android.library'
+apply from: '../gradle/plugin/kotlin-library.gradle'
+apply plugin: 'org.jetbrains.dokka'
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.compileSdkVersion
+        multiDexEnabled = true
+        versionCode rootProject.authCode
+        versionName rootProject.authVersion
+        buildConfigField 'String', 'VERSION_NAME', "\"${rootProject.authVersion}\""
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.toVersion(javaVersion)
+        targetCompatibility JavaVersion.toVersion(javaVersion)
+    }
+
+    kotlin {
+        jvmToolchain(JavaVersion.toVersion(javaVersion).toString() as Integer)
+    }
+
+    lint {
+        htmlReport true
+        abortOnError true
+        warningsAsErrors true
+        disable 'GradleDependency'
+        baseline = file("lint-baseline.xml")
+    }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/androidx.exifinterface_exifinterface.version'
+    }
+
+    testOptions {
+        unitTests {
+            returnDefaultValues = true
+            includeAndroidResources = true
+            all {
+            }
+        }
+    }
+
+    kotlinOptions {
+        freeCompilerArgs += '-Xexplicit-api=strict'
+    }
+
+    dokkaHtml.configure {
+        dokkaSourceSets {
+            configureEach {
+                includeNonPublic.set(false)
+                noAndroidSdkLink.set(false)
+                suppressInheritedMembers.set(true)
+            }
+        }
+    }
+}

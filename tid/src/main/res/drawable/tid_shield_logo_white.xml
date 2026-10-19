@@ -1,0 +1,29 @@
+<!--
+  ~ Copyright © 2024 T-Bank
+  ~
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~        http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M0,0H24V12.07C24,15.165 22.348,18.024 19.67,19.572L12,24L4.33,19.572C1.649,18.024 0,15.165 0,12.07V0Z" />
+    <path
+        android:fillColor="#333333"
+        android:fillType="evenOdd"
+        android:pathData="M6.585,6.354V10.106C7.099,9.525 8.03,9.133 9.098,9.133H10.257V13.498C10.257,14.66 9.942,15.676 9.473,16.236H14.517C14.051,15.676 13.736,14.66 13.736,13.502V9.137H14.895C15.963,9.137 16.897,9.529 17.408,10.11V6.357H6.581L6.585,6.354Z" />
+</vector>

@@ -1,0 +1,27 @@
+apply plugin: 'io.gitlab.arturbosch.detekt'
+apply from: rootProject.file('gradle/versions.gradle')
+
+dependencies {
+    detekt "io.gitlab.arturbosch.detekt:detekt-formatting:${detektVersion}"
+    detekt("io.gitlab.arturbosch.detekt:detekt-cli:${detektVersion}")
+}
+
+detekt {
+    toolVersion = detektVersion
+    source = files("src")
+    config = rootProject.files('gradle/plugin/config/detekt.yml')
+}
+
+tasks.named("detekt").configure {
+    reports {
+        xml.required.set(false)
+
+        sarif.required.set(false)
+
+        txt.required.set(true)
+        txt.outputLocation.set(file("$project.buildDir/reports/detekt-results-${project.name}.txt"))
+
+        html.required.set(true)
+        html.outputLocation.set(file("$project.buildDir/reports/detekt-results-${project.name}.html"))
+    }
+}

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="6" by="lint 8.10.1" type="baseline" client="gradle" dependencies="false" name="AGP (8.10.1)" variant="all" version="8.10.1">
+
+    <issue
+        id="UseKtx"
+        message="Use the KTX extension function `String.toUri` instead?"
+        errorLine1="            return Uri.parse(host).buildUpon()"
+        errorLine2="                   ~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ru/tbank/core/tid/api/TidApi.kt"
+            line="157"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        message="Use the KTX extension function `String.toUri` instead?"
+        errorLine1="                Uri.parse(url).getQueryParameter(FIELD_CODE)"
+        errorLine2="                ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ru/tbank/core/tid/api/TidApi.kt"
+            line="176"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        message="Use the KTX extension function `String.toUri` instead?"
+        errorLine1="            callbackUrl = Uri.parse(redirectUrl),"
+        errorLine2="                          ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ru/tbank/core/tid/TidAppLinkUtil.kt"
+            line="90"
+            column="27"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        message="Use the KTX extension function `String.toUri` instead?"
+        errorLine1="        return Uri.parse(callbackUrl).buildUpon()"
+        errorLine2="               ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ru/tbank/core/tid/TidAppLinkUtil.kt"
+            line="253"
+            column="16"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?"
+        errorLine1="        preference.edit()"
+        errorLine2="        ~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ru/tbank/core/tid/codeVerifier/TidCodeVerifierStore.kt"
+            line="32"
+            column="9"/>
+    </issue>
+
+</issues>

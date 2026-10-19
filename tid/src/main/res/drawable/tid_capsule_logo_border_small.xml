@@ -1,0 +1,47 @@
+<!--
+  ~ Copyright © 2024 T-Bank
+  ~
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~        http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="27dp"
+    android:height="14dp"
+    android:viewportWidth="27"
+    android:viewportHeight="14">
+  <group>
+    <clip-path
+        android:pathData="M7.5,0L19.5,0A7,7 0,0 1,26.5 7L26.5,7A7,7 0,0 1,19.5 14L7.5,14A7,7 0,0 1,0.5 7L0.5,7A7,7 0,0 1,7.5 0z"/>
+    <path
+        android:pathData="M19.474,0H7.526C3.646,0 0.5,3.134 0.5,7C0.5,10.866 3.646,14 7.526,14H19.474C23.354,14 26.5,10.866 26.5,7C26.5,3.134 23.354,0 19.474,0Z"
+        android:fillColor="#303030"/>
+    <path
+        android:pathData="M4.576,3.599H12.145V7.391C12.145,8.364 11.624,9.262 10.779,9.749L8.36,11.14L5.942,9.749C5.096,9.262 4.576,8.364 4.576,7.391V3.599Z"
+        android:fillColor="#FFDD2D"/>
+    <path
+        android:pathData="M6.653,5.595V6.774C6.815,6.592 7.108,6.469 7.445,6.469H7.811V7.84C7.811,8.205 7.711,8.524 7.563,8.7H9.154C9.007,8.524 8.908,8.205 8.908,7.841V6.47H9.273C9.61,6.47 9.905,6.593 10.066,6.775V5.596H6.651L6.653,5.595Z"
+        android:fillColor="#333333"
+        android:fillType="evenOdd"/>
+    <path
+        android:pathData="M16.466,9.378V4.921H15.055V9.378H16.466Z"
+        android:fillColor="#ffffff"/>
+    <path
+        android:pathData="M19.866,9.378C21.651,9.378 22.535,8.432 22.535,7.15C22.535,5.867 21.65,4.921 20.016,4.921H17.498V9.378H19.867H19.866ZM19.724,5.988C20.692,5.988 21.096,6.419 21.096,7.15C21.096,7.824 20.693,8.339 19.724,8.339H18.859V5.988H19.724Z"
+        android:fillColor="#ffffff"/>
+  </group>
+  <path
+      android:strokeWidth="1"
+      android:pathData="M7.5,0.5L19.5,0.5A6.5,6.5 0,0 1,26 7L26,7A6.5,6.5 0,0 1,19.5 13.5L7.5,13.5A6.5,6.5 0,0 1,1 7L1,7A6.5,6.5 0,0 1,7.5 0.5z"
+      android:fillColor="#00000000"
+      android:strokeColor="#ffffff"/>
+</vector>

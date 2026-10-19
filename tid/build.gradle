@@ -1,0 +1,30 @@
+apply from: '../gradle/plugin/android.gradle'
+apply plugin: 'com.vanniktech.maven.publish'
+
+android {
+    namespace 'ru.tbank.core.tid'
+    resourcePrefix 'tid_'
+
+    testOptions {
+        unitTests.includeAndroidResources = true
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+}
+
+dependencies {
+    implementation "ru.tinkoff.core.components.security:ssl-trusted-certs:$sslTrustedCertsVersion"
+    implementation "ru.tinkoff.core.components.security:ssl-trusted-certs-prod:$sslTrustedCertsVersion"
+
+    implementation "androidx.appcompat:appcompat:$appCompatVersion"
+    implementation "androidx.browser:browser:$browserVersion"
+    implementation "com.squareup.okhttp3:okhttp:$okHttpVersion"
+
+    testImplementation "junit:junit:$junitVersion"
+    testImplementation "com.google.truth:truth:$truthVersion"
+    testImplementation "org.robolectric:robolectric:$robolectricVersion"
+    testImplementation "androidx.test:core:$testCoreVersion"
+    testImplementation "com.squareup.okhttp3:mockwebserver:$okHttpVersion"
+}

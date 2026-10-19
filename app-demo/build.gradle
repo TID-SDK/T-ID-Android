@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply from: rootProject.file('gradle/versions.gradle')
+apply from: rootProject.file('gradle/plugin/detekt.gradle')
+
+android {
+    namespace 'ru.tbank.core.app_demo_partner'
+    compileSdk rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        multiDexEnabled = true
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode rootProject.authCode
+        versionName rootProject.authVersion
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.toVersion(javaVersion)
+    }
+
+    lint {
+        baseline = file("lint-baseline.xml")
+    }
+}
+
+kotlin {
+    jvmToolchain Integer.valueOf(javaVersion)
+}
+
+dependencies {
+    api project(':tid')
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+    api "androidx.appcompat:appcompat:${appCompatVersion}"
+    api "androidx.constraintlayout:constraintlayout:${constraintLayoutVersion}"
+    api "com.google.android.material:material:${materialVersion}"
+    //rx
+    api "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    api "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
+    //tests
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+    androidTestImplementation "androidx.test:rules:$testRuleVersion"
+    androidTestImplementation "androidx.test.uiautomator:uiautomator:$uiautomatorVersion"
+}

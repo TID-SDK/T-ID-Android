@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name" translatable="false">Partner Auth</string>
+    <string name="partner_auth_refresh_btn" translatable="false">Refresh token</string>
+    <string name="partner_auth_revoke_btn" translatable="false">Revoke token</string>
+    <string name="partner_auth_client_id" translatable="false">ClientId</string>
+    <string name="partner_auth_redirect_url" translatable="false">RedirectUrl</string>
+    <string name="partner_auth_phone" translatable="false">Phone</string>
+    <string name="partner_auth_host" translatable="false">Host</string>
+    <string name="partner_auth_white_label_mode" translatable="false">WhiteLabel Mode</string>
+    <string name="partner_auth_override_host" translatable="false">Override Host</string>
+    <string name="partner_auth_reset" translatable="false">Reset</string>
+    <string name="partner_auth_edit_text_empty_error_description" translatable="false">Сannot be empty</string>
+
+    <string name="partner_auth_sign_in_button_title" translatable="false">Sign in with</string>
+    <string name="partner_auth_sign_in_button_badge" translatable="false">Cashback up to 5%</string>
+
+    <string name="partner_auth_label_style" translatable="false">Style</string>
+    <string name="partner_auth_button_primary" translatable="false">Primary</string>
+    <string name="partner_auth_button_white" translatable="false">White</string>
+    <string name="partner_auth_button_gray" translatable="false">Gray</string>
+    <string name="partner_auth_button_black" translatable="false">Black</string>
+    <string name="partner_auth_label_size" translatable="false">Size</string>
+    <string name="partner_auth_label_auth_flow" translatable="false">Auth flow</string>
+    <string name="partner_auth_button_small" translatable="false">Small</string>
+    <string name="partner_auth_button_medium" translatable="false">Medium</string>
+    <string name="partner_auth_button_large" translatable="false">Large</string>
+    <string name="partner_auth_button_compact" translatable="false">Compact</string>
+    <string name="partner_auth_input_button_title" translatable="false">Button title</string>
+    <string name="partner_auth_input_badge_text" translatable="false">Badge text</string>
+    <string name="partner_auth_default_host" translatable="false">https://id.tbank.ru</string>
+    <string name="partner_auth_default_phone_number" translatable="false">+79999999999</string>
+    <string name="partner_auth_default_redirect_uri" translatable="false">mobile://</string>
+    <string name="partner_auth_default_client_id" translatable="false">test-partner-mobile</string>
+
+    <string-array name="sizes_array">
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+        <item>Compact</item>
+    </string-array>
+
+    <string-array name="styles_array">
+        <item>Primary</item>
+        <item>White</item>
+        <item>Gray</item>
+        <item>Black</item>
+    </string-array>
+
+    <string-array name="auth_flows_array">
+        <item>Auto</item>
+        <item>T-Bank App</item>
+        <item>CCT Web</item>
+    </string-array>
+
+</resources>

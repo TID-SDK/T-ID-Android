@@ -1,0 +1,51 @@
+apply from: "$project.rootDir/gradle/plugin/jacoco-common.gradle"
+
+tasks.register("jacocoRootReport", JacocoReport) {task ->
+    group = "Reporting"
+    description = "Generate overall Jacoco coverage report for the debug build."
+
+    subprojects.each { task.dependsOn("${it.name}:jacocoTestReport") }
+
+    reports {
+        csv.required = false
+    }
+
+    def jClasses = subprojects.collect { proj ->
+        if (isAndroidModule(proj)) {
+            "${proj.buildDir}/intermediates/javac/debug/classes"
+        } else {
+            "${proj.buildDir}/classes/java/main"
+        }
+    }
+    def kClasses = subprojects.collect { proj ->
+        if (isAndroidModule(proj)) {
+            "${proj.buildDir}/tmp/kotlin-classes/debug"
+        } else {
+            "${proj.buildDir}/classes/kotlin/main"
+        }
+    }
+    def javaClasses = jClasses.collect { path ->
+        fileTree(dir: path, excludes: fileFilter)
+    }
+    def kotlinClasses = kClasses.collect { path ->
+        fileTree(dir: path, excludes: fileFilter)
+    }
+
+    classDirectories.from = files([javaClasses, kotlinClasses])
+    def sources = subprojects.collect { proj ->
+        ["${proj.projectDir}/src/main/java", "${proj.projectDir}/src/main/kotlin",
+         "${proj.projectDir}/src/debug/java", "${proj.projectDir}/src/debug/kotlin"]
+    }.flatten()
+
+    sourceDirectories.from = files(sources)
+
+    def executions = subprojects.collect { proj ->
+        if (isAndroidModule(proj)) {
+            "${proj.buildDir}/jacoco/testDebugUnitTest.exec"
+        } else {
+            "${proj.buildDir}/jacoco/test.exec"
+        }
+    }
+
+    executionData.from = (files(executions).filter { it.exists() })
+}
