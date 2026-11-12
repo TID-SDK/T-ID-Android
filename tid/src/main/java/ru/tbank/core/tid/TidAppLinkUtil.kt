@@ -205,7 +205,11 @@ internal class TidAppLinkUtil(private val context: Context) {
     @RequiresApi(Build.VERSION_CODES.S)
     private fun checkAppLinkVerify(packageName: String, appDomain: String): Boolean {
         val manager = context.getSystemService(DomainVerificationManager::class.java)
-        val userState = manager.getDomainVerificationUserState(packageName) ?: return false
+        val userState = try {
+            manager.getDomainVerificationUserState(packageName)
+        } catch (e: PackageManager.NameNotFoundException) {
+            return false
+        } ?: return false
 
         return isPartnerHostVerifiedAndAllowed(
             isLinkHandlingAllowed = userState.isLinkHandlingAllowed,
